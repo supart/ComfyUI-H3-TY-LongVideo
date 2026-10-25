@@ -1,0 +1,56 @@
+{
+  "schema": 2,
+  "singing": {
+    "allowed_framings": [
+      "close-up",
+      "medium close-up",
+      "medium shot",
+      "full shot"
+    ],
+    "allowed_angles": [
+      "front",
+      "front three-quarter right",
+      "front three-quarter left"
+    ],
+    "energy_movements": {
+      "low": [
+        "micro_reframe",
+        "arc_left",
+        "arc_right",
+        "dolly_out"
+      ],
+      "medium": [
+        "arc_left",
+        "arc_right",
+        "truck_left",
+        "truck_right",
+        "micro_reframe",
+        "dolly_in",
+        "dolly_out"
+      ],
+      "high": [
+        "dolly_in",
+        "dolly_out",
+        "arc_left",
+        "arc_right",
+        "truck_left",
+        "truck_right"
+      ]
+    },
+    "every_segment_moves": true,
+    "no_adjacent_same_family": true,
+    "alternate_lateral_direction": true,
+    "avoid_direct_axis_cross": true
+  },
+  "speaking": {
+    "framing": "medium close-up",
+    "angle": "front",
+    "movement": "steady",
+    "keep_composition_across_segments": true
+  },
+  "speech_light": {
+    "framing": "medium shot",
+    "angle": "front",
+    "movement": "steady"
+  }
+}

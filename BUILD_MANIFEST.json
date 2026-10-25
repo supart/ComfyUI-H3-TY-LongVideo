@@ -1,0 +1,451 @@
+{
+  "version": "0.1.0-beta.1",
+  "release_tag": "v0.1.0-beta.1",
+  "built_utc": "2026-10-25T11:17:13.7954124Z",
+  "source": {
+    "kind": "reviewed-prerelease-snapshot",
+    "base_commit": "5c24bb3559f506b5830579a20f029e9caed2eda4",
+    "includes_uncommitted_changes": false,
+    "previous_development_history_included": false,
+    "upstream_repository": "Zzz1phyrf/ComfyUI-H3-LongVideo"
+  },
+  "manifest_hash_policy": "This file is excluded from its own file list; ZIP checksum is external.",
+  "validation": {
+    "overall": "prerelease-with-known-validation-and-license-limitations",
+    "source_tests": {
+      "origin": "stage-20261025-r1",
+      "date": "2026-10-25",
+      "reuse_basis": "All non-Markdown baseline payload files have identical SHA256; no runtime or test code changes.",
+      "unchanged_payload_files": 45,
+      "javascript": {
+        "tests": 51,
+        "passed": 51,
+        "syntax_files": 3,
+        "status": "passed"
+      },
+      "python": {
+        "complete_modules": 13,
+        "complete_tests": 196,
+        "module_count": 14,
+        "modules": [
+          {
+            "module": "test_ai_director.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 35,
+            "observed_passed": 35
+          },
+          {
+            "module": "test_camera_controls.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 7,
+            "observed_passed": 7
+          },
+          {
+            "module": "test_clip_project.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 5,
+            "observed_passed": 5
+          },
+          {
+            "module": "test_director_review.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 42,
+            "observed_passed": 42
+          },
+          {
+            "module": "test_director_task.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 24,
+            "observed_passed": 24
+          },
+          {
+            "module": "test_execution_bridge.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 21,
+            "observed_passed": 21
+          },
+          {
+            "module": "test_plugin.py",
+            "status": "early-exit",
+            "returncode": 3221225477,
+            "reported_tests_run": null,
+            "observed_passed": 1
+          },
+          {
+            "module": "test_prompt_kind.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 8,
+            "observed_passed": 8
+          },
+          {
+            "module": "test_qwen_adapter.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 22,
+            "observed_passed": 22
+          },
+          {
+            "module": "test_qwen_longvideo.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 5,
+            "observed_passed": 5
+          },
+          {
+            "module": "test_shot_edits.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 5,
+            "observed_passed": 5
+          },
+          {
+            "module": "test_speech_light.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 10,
+            "observed_passed": 10
+          },
+          {
+            "module": "test_ty_namespace_migration.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 3,
+            "observed_passed": 3
+          },
+          {
+            "module": "test_worker_cache.py",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 9,
+            "observed_passed": 9
+          }
+        ],
+        "targeted": [
+          {
+            "module": "test_plugin.CoreTests.test_refresh_segment_sampling_seed_changes_only_known_h3_samplers",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 1
+          },
+          {
+            "module": "test_plugin.CoreTests.test_refresh_segment_sampling_seed_allows_snapshot_without_known_sampler",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 1
+          },
+          {
+            "module": "test_plugin.ControllerTests.test_single_segment_regeneration_does_not_continue_into_unfinished_rows",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 1
+          },
+          {
+            "module": "test_plugin.CoreTests.test_unified_node_preserves_segment_output_contract",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 1
+          },
+          {
+            "module": "test_plugin.CoreTests.test_shot_planner_alignment_size_frames_and_bfs_shot_contract",
+            "status": "passed",
+            "returncode": 0,
+            "reported_tests_run": 1
+          }
+        ],
+        "limitation": "test_plugin.py native access violation 0xC0000005; no full-suite pass claim"
+      }
+    },
+    "workflow": {
+      "status": "passed",
+      "source_unchanged": true,
+      "nodes": 35,
+      "links": 48,
+      "groups": 8,
+      "sanitized_sha256": "14ab04080f49c9bd0cf7ce0cfded15c66eb52f4493347111492adae67fcabd15",
+      "changed_fields_whitelist_passed": true
+    },
+    "content_scan": "passed",
+    "new_gpu_tasks": false,
+    "other_machine_acceptance": "not-run",
+    "latest_selflift_regeneration_live_acceptance": "pending"
+  },
+  "files": [
+    {
+      "path": "__init__.py",
+      "bytes": 237,
+      "sha256": "83ac8a849eb2d0fa615cdb11c723096f6d909546b58ae264f09f2159f04137dc"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 271,
+      "sha256": "8605cd85f5d9228d30ab6d82bdd10f936968a07c7677933bc82dc1bb3ae6848c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 226,
+      "sha256": "85b1af15d4de7831ada36910566d4bddbdfb133dfec8a6da4e1a68535e96b18a"
+    },
+    {
+      "path": "验证摘要.md",
+      "bytes": 2591,
+      "sha256": "0257fb3f94c20fd25e93278a162afc07d92997f13a6ec941c8e291339df9654c"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1176,
+      "sha256": "f74d6693ae4eb2b261728e2ceffa3ff649a807dae34be2658995866d6acb6f93"
+    },
+    {
+      "path": "ai_director.py",
+      "bytes": 53169,
+      "sha256": "d1acf5a2217d0a5f2eb36dcd383d059f1da8aecfddbc2f2f0088188c308e836a"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 789,
+      "sha256": "0a8f9d3f1f8775e87a380600678679a97b1e55141e4842e3b78c39071f908107"
+    },
+    {
+      "path": "clip_project.py",
+      "bytes": 12007,
+      "sha256": "62dadd381afd3409ac7b07b2efcbddacb0c35311e42e0c9bac54c4f510fcbf67"
+    },
+    {
+      "path": "controller.py",
+      "bytes": 50446,
+      "sha256": "d9b6b94474313634852df2d512a825b6ebf5cbc47f48f6f697bb067f54f5b0d2"
+    },
+    {
+      "path": "core.py",
+      "bytes": 94457,
+      "sha256": "70e77397bd7b69725025fe7795ab52e4bd3814d1ea95cd99e12ea3821c5d3926"
+    },
+    {
+      "path": "defaults/director_config.json",
+      "bytes": 1135,
+      "sha256": "205b42d52d15d41a92e4c5820cbc1e50ee685248d4a9052b67867a8078dcaf44"
+    },
+    {
+      "path": "director_review.py",
+      "bytes": 38423,
+      "sha256": "fd8f09e3c5c798b25d2af11217f7006e67a492f307749271a2a099c99c65f353"
+    },
+    {
+      "path": "director_rules.py",
+      "bytes": 9551,
+      "sha256": "16c5a724b01b30ebc69974f5bf7b027f9e12d3c0c0bd9acaee66c982d17f6152"
+    },
+    {
+      "path": "director_task.py",
+      "bytes": 17582,
+      "sha256": "910dfcdfcd622c1494030656c92b8b904651a2d4a0c0d61eb82c973041c3b288"
+    },
+    {
+      "path": "docs/安装与迁移.md",
+      "bytes": 9897,
+      "sha256": "9928a2ef13c674f30e7e55e98121d780902d8b9c9cd0f7fa99301a32d64765e4"
+    },
+    {
+      "path": "docs/阶段说明.md",
+      "bytes": 3956,
+      "sha256": "6dd884e610395e55a5d90826e04574417ba59833a7348993d9a75972b8912da7"
+    },
+    {
+      "path": "docs/长音频功能.md",
+      "bytes": 6545,
+      "sha256": "1177633bcfbc41fc80ccc451679468db8a029730b6417b2c8c66cecfa4881d07"
+    },
+    {
+      "path": "examples/TY_ShotPlanner_SelfLift_迁移版_20261025.json",
+      "bytes": 90342,
+      "sha256": "14ab04080f49c9bd0cf7ce0cfded15c66eb52f4493347111492adae67fcabd15"
+    },
+    {
+      "path": "execution_bridge.py",
+      "bytes": 24383,
+      "sha256": "ecba6ae54ccaf82b8dc104064250e765c05f42ad1ddf885c1120bf934a2f2caa"
+    },
+    {
+      "path": "install_runtime.py",
+      "bytes": 59511,
+      "sha256": "e48b67d8d47301f816c2fd02c24e835913d4d8c8d631bd2da8549f7d10233de6"
+    },
+    {
+      "path": "nodes.py",
+      "bytes": 41201,
+      "sha256": "8d0b19473a6a936923fea8442cd74409e95d6294a91e796e2983a13969429ad3"
+    },
+    {
+      "path": "qwen_adapter.py",
+      "bytes": 23258,
+      "sha256": "365dc3db0a52b9f996e00ceca91c51e9c0590ab73a2a6127aaeac843eafbaee0"
+    },
+    {
+      "path": "qwen_h3_engine.py",
+      "bytes": 25200,
+      "sha256": "d1f213d7b86f5985bd1b0a2a05972b3c4f27ff3815ef1331304e0757f2423de6"
+    },
+    {
+      "path": "qwen_h3_media.py",
+      "bytes": 3316,
+      "sha256": "5a21b2e2ed015bbf5fd8b974c97afe46509c833a55e1bf65a93b9db4ca785d1a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8523,
+      "sha256": "28cc60d261e68c4a32b74e8dd54d27dd3cfc4d45fcf2acbe13b0ea19618ab95c"
+    },
+    {
+      "path": "ref2va_performance_rule.txt",
+      "bytes": 9351,
+      "sha256": "01746925b9cf962d711143c8c227e211d8ab3dc7fd7b7b9d70ac4ad36ffd13d5"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 34,
+      "sha256": "7fd1b043eddd6e36e35c6908a384194fe7c80e957eda0baa115c3108a32cc7a8"
+    },
+    {
+      "path": "routes.py",
+      "bytes": 25746,
+      "sha256": "9a7384ed58d157f8cd34c17607fe6bcb2af0a9d5190e6245a6fd6f80acec25cd"
+    },
+    {
+      "path": "runtime.py",
+      "bytes": 14553,
+      "sha256": "c992d8b4962061c66a10e99189a5562cb1578146c1edd94910fd22d91f74b767"
+    },
+    {
+      "path": "tests/test_ai_director.py",
+      "bytes": 30918,
+      "sha256": "96ace6f15fabf1533ef8027a3588ab9bf3a28a0e27e6bcc61b0ef5d68aea9074"
+    },
+    {
+      "path": "tests/test_batch_start.mjs",
+      "bytes": 20916,
+      "sha256": "f0d5cb8b25c7d357e181fff15953b6f140c2d17139526980a8e733cfe27476b8"
+    },
+    {
+      "path": "tests/test_camera_controls.py",
+      "bytes": 3682,
+      "sha256": "c170a187bddd8e50690749b046b6ebc810ba91d58feaf8cc049260a2052b65ee"
+    },
+    {
+      "path": "tests/test_clip_project.py",
+      "bytes": 13331,
+      "sha256": "a298b028f007ced333fce452d24ad4acc527c473c52678f4c4e0c24c335e32c6"
+    },
+    {
+      "path": "tests/test_director_review.mjs",
+      "bytes": 22997,
+      "sha256": "852a48341fd1c1d59530d17604ef66edfae6e9c8c8b0a7626d2f3ef8e4d8e9d7"
+    },
+    {
+      "path": "tests/test_director_review.py",
+      "bytes": 45006,
+      "sha256": "b84e46624cb606959a9800815dacc6d7e2f190e50368413d7f9700cbadcfd725"
+    },
+    {
+      "path": "tests/test_director_task.py",
+      "bytes": 28138,
+      "sha256": "be9cb3718418be1f82a9696d3d55c643bbfcf909d0631709d9d94173a1873d39"
+    },
+    {
+      "path": "tests/test_execution_bridge.py",
+      "bytes": 23755,
+      "sha256": "cf1f4b014dbbe9dda4352f3553f14cf44f7a1f8c52d06fd16b2a0de49d50f6c6"
+    },
+    {
+      "path": "tests/test_plugin.py",
+      "bytes": 126145,
+      "sha256": "d6caa93eb5521a553569c641f01f5db2501fb638ebaba4777e3cda9beebc1d82"
+    },
+    {
+      "path": "tests/test_prompt_kind.py",
+      "bytes": 5937,
+      "sha256": "d24eb4395ee2056efb43c3fb50b0abc38a1352f4c86395581ca8855175f362c3"
+    },
+    {
+      "path": "tests/test_qwen_adapter.py",
+      "bytes": 23228,
+      "sha256": "550d411920608374ceefd8515f1ea83f6fb4162c3a5d07460300bba5beaaab58"
+    },
+    {
+      "path": "tests/test_qwen_longvideo.py",
+      "bytes": 7579,
+      "sha256": "cc0c0b60ce4a0dbcf38b937ff24218b79def65acf5b6669909926dc8215f8278"
+    },
+    {
+      "path": "tests/test_shot_edits.py",
+      "bytes": 5789,
+      "sha256": "ad9b5ba34e07dff5ae9068364f7b9f347afbddfa0ee768a7d90d5660cc8aa563"
+    },
+    {
+      "path": "tests/test_source_video_preview.mjs",
+      "bytes": 19888,
+      "sha256": "4afef5b46b9eb3ff340912b149b3eede8bc4cef636255faf4c74d0dd476de109"
+    },
+    {
+      "path": "tests/test_speech_light.py",
+      "bytes": 10198,
+      "sha256": "dc844361f460121135935d512621a3becfca31c23eecd617643316cbbe29a9ee"
+    },
+    {
+      "path": "tests/test_timeline.mjs",
+      "bytes": 10973,
+      "sha256": "2430da24572771bfc2d8fbf03b03e26d37842e7646808f6e049819b57d0ef5e8"
+    },
+    {
+      "path": "tests/test_ty_namespace_migration.py",
+      "bytes": 5035,
+      "sha256": "e52a095ba98853cdb5176daa61ce0f8e6146ff8f1dd0d9164471d1dfe0d36460"
+    },
+    {
+      "path": "tests/test_worker_cache.py",
+      "bytes": 5107,
+      "sha256": "74a6b634e741cd459259b4b2504dcde5612a5229c33d47c9e653379cd0ed2298"
+    },
+    {
+      "path": "third_party/llama.cpp-LICENSE",
+      "bytes": 1099,
+      "sha256": "bcd8ec749126d45cb06737d0690295d73df4b6e7e194205bcf91190368f27285"
+    },
+    {
+      "path": "tools/migrate_ty_namespace.py",
+      "bytes": 4897,
+      "sha256": "1d5a20d02f8f155ea2eee1d955db218f6848e0add49422daf50bebdfd7c0b662"
+    },
+    {
+      "path": "web/director_review.js",
+      "bytes": 3587,
+      "sha256": "7de61cc3f50f5d453f936dfbd2873a83c1dfef6fb967ee5c0794a37122bbbd89"
+    },
+    {
+      "path": "web/timeline.js",
+      "bytes": 23389,
+      "sha256": "7be014b55680e368051d7373b2bf67df64b1c2753f7d1a15c1f0608fd2402c38"
+    },
+    {
+      "path": "web/ty-h3lv.css",
+      "bytes": 18025,
+      "sha256": "897eacde57252c760f96cc4677d5513a8065b366091fdffcf5d4d462125f28cd"
+    },
+    {
+      "path": "web/ty-h3lv.js",
+      "bytes": 139827,
+      "sha256": "14c1279dd8484994a384279aae139b53b73af241e80ad3165a79ef9665cc66dd"
+    },
+    {
+      "path": "worker.py",
+      "bytes": 5092,
+      "sha256": "1ad643ee6671c1afb09a7e6aec959825ea5b2e2d47f06a66b65d1bb56d26cbc0"
+    }
+  ]
+}

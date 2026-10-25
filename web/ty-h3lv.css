@@ -1,0 +1,325 @@
+.ty-h3lv-shade {
+  position: fixed; inset: 0; z-index: 10001; padding: 2vh 3vw;
+  display: flex; justify-content: center;
+  box-sizing: border-box; background: rgba(0, 0, 0, .7);
+  color: #eef1f5; font: 14px/1.45 Inter, "Microsoft YaHei", sans-serif;
+}
+.ty-h3lv-panel {
+  width: min(1440px, 100%); height: 96vh; overflow: auto; border: 1px solid #4b5666; border-radius: 12px;
+  background: #1b1f26; box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+.ty-h3lv-settings-shade { display: grid; place-items: center; z-index: 10002; }
+.ty-h3lv-settings-panel {
+  width: min(620px, 92vw); padding: 18px; box-sizing: border-box;
+  border: 1px solid #4b5666; border-radius: 12px; background: #1b1f26;
+  box-shadow: 0 20px 60px rgba(0,0,0,.55);
+}
+.ty-h3lv-settings-panel h2 { margin: 0; font-size: 19px; }
+.ty-h3lv-rules-panel { width: min(900px, 94vw); max-height: 94vh; overflow: auto; }
+.ty-h3lv-confirm-panel { width: min(520px, 92vw); }
+.ty-h3lv-storyboard-panel { width: min(960px, 94vw); max-height: 94vh; overflow: auto; }
+.ty-h3lv-storyboard-preview { max-height: 50vh; overflow: auto; margin: 12px 0; }
+.ty-h3lv-storyboard-words { white-space: pre-wrap; overflow-wrap: anywhere; }
+.ty-h3lv-confirm-copy { margin: 14px 0 0; color: #d6dde7; line-height: 1.65; }
+.ty-h3lv-confirm-actions { justify-content: flex-end; margin-top: 18px; }
+.ty-h3lv-dialog-error h2 { color: #ff9da2; }
+.ty-h3lv-dialog-error { border-color: #8d444a; }
+.ty-h3lv-dialog-warning h2 { color: #f0d18b; }
+.ty-h3lv-dialog-warning { border-color: #7d6839; }
+.ty-h3lv-settings-form { display: grid; gap: 12px; margin: 16px 0; }
+.ty-h3lv-settings-form label { display: grid; gap: 5px; color: #b9c4d2; }
+.ty-h3lv-settings-form input {
+  padding: 8px 10px; border: 1px solid #566274; border-radius: 6px;
+  background: #11151c; color: #edf1f7;
+}
+.ty-h3lv-rule-editor {
+  width: 100%; box-sizing: border-box; padding: 9px 10px;
+  border: 1px solid #566274; border-radius: 6px;
+  background: #11151c; color: #edf1f7;
+  font: 13px/1.55 Consolas, "Microsoft YaHei", monospace; resize: vertical;
+}
+.ty-h3lv-header {
+  position: sticky; top: 0; z-index: 5; padding: 14px 18px 12px;
+  border-bottom: 1px solid #3c4552; background: rgba(27,31,38,.97); backdrop-filter: blur(8px);
+}
+.ty-h3lv-title-row, .ty-h3lv-project-row, .ty-h3lv-actions, .ty-h3lv-selected-bar,
+.ty-h3lv-summary-main, .ty-h3lv-metrics { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ty-h3lv-title-row { justify-content: space-between; }
+.ty-h3lv-title-row h2 { margin: 0; font-size: 19px; }
+.ty-h3lv-project-row { margin-top: 10px; }
+.ty-h3lv-project-row label { color: #adb7c6; }
+.ty-h3lv-project-row select {
+  min-width: min(660px, 75vw); margin-left: 8px; padding: 7px 10px;
+  border: 1px solid #566274; border-radius: 6px; background: #11151c; color: #edf1f7;
+}
+.ty-h3lv-status { margin: 9px 0 5px; color: #b9c4d2; }
+.ty-h3lv-status.is-dirty { color: #ffd078; }
+.ty-h3lv-director-job { white-space: pre-wrap; overflow-wrap: anywhere; padding: 7px 0; color: #bad9f5; }
+.ty-h3lv-director-job[data-status="failed"], .ty-h3lv-director-job[data-status="interrupted"] { color: #ffb5b5; }
+.ty-h3lv-storyboard-status { position: sticky; top: 0; z-index: 2; background: #1b1f26; }
+.ty-h3lv-actions { gap: 6px; }
+.ty-h3lv-button {
+  padding: 7px 11px; border: 1px solid #5a6575; border-radius: 6px;
+  background: #2a303a; color: #eef2f8; cursor: pointer;
+}
+.ty-h3lv-button:hover { border-color: #7e8b9f; background: #333b47; }
+.ty-h3lv-button:disabled { opacity: .5; cursor: wait; }
+.ty-h3lv-button.is-running {
+  border-color: #7db7f4; background: #365d88; color: #fff;
+  opacity: 1; cursor: wait;
+  box-shadow: 0 0 0 1px rgba(125,183,244,.2), 0 0 12px rgba(74,145,220,.45);
+  animation: ty-h3lv-button-breathe 1.5s ease-in-out infinite;
+}
+@keyframes ty-h3lv-button-breathe {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(125,183,244,.16), 0 0 8px rgba(74,145,220,.28); }
+  50% { box-shadow: 0 0 0 3px rgba(125,183,244,.28), 0 0 18px rgba(74,145,220,.65); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ty-h3lv-button.is-running { animation: none; }
+}
+.ty-h3lv-button.primary { border-color: #3286d7; background: #1769aa; }
+.ty-h3lv-button.run {
+  padding: 8px 17px; border-color: #40d986; background: linear-gradient(180deg, #1b9f60, #117747);
+  color: #fff; font-weight: 700; box-shadow: 0 0 0 1px rgba(64,217,134,.12), 0 3px 12px rgba(18,147,83,.28);
+}
+.ty-h3lv-button.run:hover {
+  border-color: #78efad; background: linear-gradient(180deg, #24b86f, #168a52);
+  box-shadow: 0 0 0 2px rgba(64,217,134,.16), 0 4px 15px rgba(18,147,83,.36);
+}
+.ty-h3lv-button.pause { border-color: #8b7441; color: #f0d18b; background: #302a20; }
+.ty-h3lv-button.pause:hover { border-color: #b99a54; background: #3a3225; }
+.ty-h3lv-button.stop { border-color: #b34c52; color: #ffd2d5; background: #452328; }
+.ty-h3lv-button.stop:hover { border-color: #e36b72; background: #5a292f; }
+.ty-h3lv-button.segment-run { margin-right: 7px; border-color: #4f9fe8; color: #d8ecff; background: #203b55; }
+.ty-h3lv-button.segment-run:hover { border-color: #75bbfa; background: #294b6c; }
+.ty-h3lv-close { margin-left: auto; }
+.ty-h3lv-content { padding: 16px 18px 36px; }
+.ty-h3lv-overview {
+  padding: 14px; border: 1px solid #3f4855; border-radius: 10px; background: #20252d;
+}
+.ty-h3lv-help { margin: 0 0 4px; color: #d6dde7; }
+.ty-h3lv-notice { margin-bottom: 8px; color: #aeb9c8; font-size: 12px; }
+.ty-h3lv-source-preview {
+  display: grid; justify-items: center; gap: 7px; margin: 10px 0 12px;
+  padding: 10px; border: 1px solid #333d49; border-radius: 8px; background: #11151c;
+}
+.ty-h3lv-source-preview video {
+  display: block; width: 100%; max-height: 360px; object-fit: contain; background: #000;
+}
+.ty-h3lv-source-preview-status {
+  width: 100%; color: #b8c5d5; font-size: 12px; font-variant-numeric: tabular-nums;
+}
+.ty-h3lv-source-preview-status.is-error { color: #ffb5b5; }
+.ty-h3lv-node-video {
+  position: relative; width: 100%; height: 100%; min-width: 0; max-height: 300px;
+  overflow: hidden; border-radius: 6px; background: #000;
+}
+.ty-h3lv-node-video video {
+  display: block; width: 100%; height: 100%; max-height: 300px; object-fit: contain;
+}
+.ty-h3lv-node-video [hidden], .ty-h3lv-node-video[hidden] { display: none; }
+.ty-h3lv-node-video-error {
+  padding: 12px; color: #ffb5b5; font: 12px/1.5 sans-serif; overflow-wrap: anywhere;
+}
+.ty-h3lv-source-upload {
+  display: flex; align-items: center; gap: 6px; width: 100%; height: 40px; min-width: 0;
+}
+.ty-h3lv-source-upload .ty-h3lv-button { flex: 1; min-width: 0; padding: 6px 4px; font-size: 12px; }
+.ty-h3lv-source-clip { width: min(900px, 94vw); max-height: 94vh; overflow: auto; }
+.ty-h3lv-source-clip .ty-h3lv-source-preview video { max-height: min(320px, 36vh); }
+.ty-h3lv-source-clip .ty-h3lv-timeline { height: 153px; box-sizing: border-box; }
+.ty-h3lv-source-clip .ty-h3lv-timeline[hidden],
+.ty-h3lv-source-clip .ty-h3lv-timeline-tools[hidden] { display: none; }
+.ty-h3lv-source-clip .ty-h3lv-clip-controls { align-items: center; }
+.ty-h3lv-source-clip .ty-h3lv-clip-controls span { margin-right: auto; }
+.ty-h3lv-source-clip input {
+  box-sizing: border-box; padding: 7px; color: #edf1f7; background: #11151c;
+  border: 1px solid #566274; border-radius: 6px;
+}
+.ty-h3lv-clip-controls {
+  display: flex; flex-wrap: wrap; align-items: end; gap: 10px; padding: 8px 0;
+}
+.ty-h3lv-clip-controls[hidden] { display: none; }
+.ty-h3lv-clip-controls label { display: grid; gap: 4px; }
+.ty-h3lv-clip-controls input { width: 130px; max-width: 100%; }
+.ty-h3lv-timeline {
+  display: block; width: 100%; height: 220px; border: 1px solid #333d49; border-radius: 8px;
+  background: #11151c; cursor: crosshair; touch-action: none;
+}
+.ty-h3lv-timeline:focus-visible { outline: 2px solid #61aef8; outline-offset: 2px; }
+.ty-h3lv-selected-bar { justify-content: space-between; margin-top: 10px; }
+.ty-h3lv-selected-bar audio { width: min(680px, 65vw); height: 34px; }
+.ty-h3lv-selected-info { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ty-h3lv-track-switch { display: inline-flex; border: 1px solid #566274; border-radius: 6px; overflow: hidden; }
+.ty-h3lv-track-button {
+  padding: 5px 13px; border: 0; background: #222831; color: #b9c4d2; cursor: pointer;
+  font: 13px/1.4 Inter, "Microsoft YaHei", sans-serif;
+}
+.ty-h3lv-track-button + .ty-h3lv-track-button { border-left: 1px solid #566274; }
+.ty-h3lv-track-button:hover { background: #2c333f; color: #eef2f8; }
+.ty-h3lv-track-button.is-active { background: #1769aa; color: #ffffff; font-weight: 600; }
+.ty-h3lv-segments { margin-top: 14px; }
+.ty-h3lv-card { margin: 8px 0; border: 1px solid #404956; border-radius: 8px; background: #20252d; }
+.ty-h3lv-card > summary {
+  display: grid; grid-template-columns: minmax(260px, 1.2fr) minmax(180px, 1fr) 96px;
+  align-items: center; gap: 12px; padding: 11px 13px; cursor: pointer; list-style-position: inside;
+}
+.ty-h3lv-card[open] > summary { border-bottom: 1px solid #3d4652; background: #252b34; }
+.ty-h3lv-summary-main strong { color: #f6f8fa; }
+.ty-h3lv-time, .ty-h3lv-duration { color: #aeb8c6; font-variant-numeric: tabular-nums; }
+.ty-h3lv-reason { overflow: hidden; color: #d5dde8; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
+.ty-h3lv-chip { justify-self: end; padding: 3px 8px; border-radius: 999px; font-size: 12px; white-space: nowrap; }
+.ty-h3lv-chip.safe { color: #90efba; background: rgba(39,169,101,.18); }
+.ty-h3lv-chip.review { color: #ffd36f; background: rgba(222,157,28,.17); }
+.ty-h3lv-chip.risk { color: #ff9c9c; background: rgba(219,70,70,.18); }
+.ty-h3lv-chip.neutral { color: #bac5d3; background: rgba(147,161,180,.15); }
+.ty-h3lv-card-body { position: relative; padding: 12px 14px 15px; }
+.ty-h3lv-card-body.has-preview { min-height: 205px; padding-right: 350px; }
+.ty-h3lv-card-body::after { display: block; clear: both; content: ""; }
+.ty-h3lv-segment-preview {
+  position: absolute; top: 12px; right: 14px; width: 316px; margin: 0;
+  border: 1px solid #414c5b; border-radius: 7px; overflow: hidden; background: #11151c;
+}
+.ty-h3lv-segment-preview figcaption { padding: 6px 9px; color: #b7c5d7; font-size: 12px; }
+.ty-h3lv-segment-preview video {
+  display: block; width: 100%; height: 176px; object-fit: contain; background: #080a0e;
+}
+.ty-h3lv-lyrics { margin: 0 0 8px; color: #f0f3f7; }
+.ty-h3lv-warnings { margin: 6px 0 10px; padding-left: 22px; color: #ffbf7a; }
+.ty-h3lv-metrics { margin: 9px 0; color: #aeb8c6; }
+.ty-h3lv-audio-label { margin: 10px 0 5px; color: #aeb8c6; font-size: 12px; }
+.ty-h3lv-segment-audio { display: block; width: 100%; height: 34px; }
+.ty-h3lv-prompt-actions { margin: 12px 0 0; }
+.ty-h3lv-button.prompt-edit { border-color: #4f9fe8; color: #d8ecff; background: #203b55; }
+.ty-h3lv-prompt-editor-panel { width: min(1180px, 94vw); height: min(820px, 92vh); display: flex; flex-direction: column; }
+.ty-h3lv-prompt-editor-panel > .ty-h3lv-help { margin: 10px 0; }
+.ty-h3lv-prompt-editor {
+  flex: 1; min-height: 0; width: 100%; box-sizing: border-box; padding: 14px;
+  border: 1px solid #566274; border-radius: 7px; resize: none;
+  background: #0f1319; color: #edf1f7; font: 14px/1.65 Consolas, "Microsoft YaHei", monospace;
+}
+.ty-h3lv-job { color: #b7c5d7; }
+.ty-h3lv-result { margin-top: 16px; }
+.ty-h3lv-result-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.ty-h3lv-result-header h3 { margin: 0; }
+.ty-h3lv-button.reveal-final { padding: 5px 9px; }
+.ty-h3lv-result video { max-width: 100%; max-height: 60vh; }
+@media (max-width: 900px) {
+  .ty-h3lv-shade { padding: 0; }
+  .ty-h3lv-panel { height: 100vh; border-radius: 0; }
+  .ty-h3lv-card > summary { grid-template-columns: 1fr auto; }
+  .ty-h3lv-reason { grid-column: 1 / -1; grid-row: 2; justify-self: start; text-align: left; }
+  .ty-h3lv-chip { grid-column: 2; grid-row: 1; }
+  .ty-h3lv-selected-bar audio { width: 100%; }
+  .ty-h3lv-source-preview { padding: 7px; }
+  .ty-h3lv-source-preview video { width: 100%; max-height: 42vh; }
+  .ty-h3lv-card-body.has-preview { min-height: 0; padding-right: 14px; }
+  .ty-h3lv-segment-preview { position: static; width: 100%; margin: 0 0 12px; }
+}
+
+.ty-h3lv-timeline-tools { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-bottom:8px; }
+.ty-h3lv-timeline-readout { color:#b8c5d5; font-size:12px; font-variant-numeric:tabular-nums; }
+.ty-h3lv-timeline-navigation { display:block; width:100%; margin:8px 0; accent-color:#4da3ff; }
+.ty-h3lv-timeline { height:228px; }
+
+.ty-h3lv-material-note {
+  width: 100%; min-height: 62px; box-sizing: border-box; margin: 0 0 4px; padding: 9px 10px;
+  border: 1px solid #566274; border-radius: 6px; resize: vertical;
+  background: #11151c; color: #edf1f7; font: 13px/1.55 Inter, "Microsoft YaHei", sans-serif;
+}
+.ty-h3lv-references { margin: 12px 0 0; }
+.ty-h3lv-reference-library {
+  margin: 10px 0 0; padding: 10px; border: 1px solid #40536a; border-radius: 7px;
+  background: #18212c;
+}
+.ty-h3lv-reference-library .ty-h3lv-help { margin: 0; }
+.ty-h3lv-reference-library-list {
+  display: flex; flex-wrap: wrap; gap: 8px; max-height: 210px; overflow: auto; margin-top: 9px;
+}
+.ty-h3lv-reference-library-item {
+  width: 92px; margin: 0; padding: 5px; border: 1px solid #414c5b; border-radius: 6px;
+  background: #141920; text-align: center;
+}
+.ty-h3lv-reference-library-item img {
+  display: block; width: 100%; height: 66px; object-fit: contain;
+  border-radius: 4px; background: #080a0e;
+}
+.ty-h3lv-reference-library-item figcaption { margin-top: 4px; color: #d6e2ef; font-size: 12px; }
+.ty-h3lv-reference-select {
+  width: 100%; margin-top: 6px; padding: 5px 6px; border: 1px solid #566274; border-radius: 5px;
+  background: #11151c; color: #edf1f7; font-size: 12px;
+}
+.ty-h3lv-reference-upload-hint { color: #8e9aaa; font-size: 10px; }
+.ty-h3lv-reference-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.ty-h3lv-reference-header .ty-h3lv-audio-label { margin: 0; }
+.ty-h3lv-button.reference-add { border-color: #4f9fe8; color: #d8ecff; background: #203b55; }
+.ty-h3lv-button.reference-add:hover { border-color: #75bbfa; background: #294b6c; }
+.ty-h3lv-reference-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0 0; }
+.ty-h3lv-reference-item {
+  width: 132px; margin: 0; padding: 6px; border: 1px solid #414c5b; border-radius: 7px;
+  background: #141920; text-align: center;
+}
+.ty-h3lv-reference-item img {
+  display: block; width: 100%; height: 98px; object-fit: contain;
+  border-radius: 4px; background: #080a0e;
+}
+.ty-h3lv-reference-item figcaption { margin-top: 5px; color: #aeb8c6; font-size: 12px; }
+.ty-h3lv-reference-tools { display: flex; justify-content: center; gap: 4px; margin-top: 5px; }
+.ty-h3lv-reference-tool {
+  padding: 2px 7px; border: 1px solid #5a6575; border-radius: 5px;
+  background: #2a303a; color: #eef2f8; font-size: 12px; cursor: pointer;
+}
+.ty-h3lv-reference-tool:disabled { opacity: .4; cursor: default; }
+.ty-h3lv-reference-tool:hover:not(:disabled) { border-color: #7e8b9f; background: #333b47; }
+.ty-h3lv-reference-empty { margin: 9px 0 0; color: #9aa5b4; font-size: 12px; }
+.ty-h3lv-project-row .ty-h3lv-default-references select { min-width: 150px; margin-left: 8px; }
+.ty-h3lv-reference-placeholder {
+  display: grid; place-items: center; width: 100%; height: 98px; color: #8e9aaa;
+  background: #080a0e; border-radius: 4px; font-size: 12px;
+}
+.ty-h3lv-reference-dual-item { width: 170px; }
+.ty-h3lv-reference-dual-item .ty-h3lv-reference-tool { font-size: 11px; }
+.ty-h3lv-button.reference-copy { border-color: #7e8b9f; color: #e6ecf5; background: #2f3641; }
+.ty-h3lv-button.reference-copy:hover { border-color: #9aa8bc; background: #39414e; }
+.ty-h3lv-export-panel { display: flex; flex-direction: column; gap: 10px; width: min(560px, 94vw); }
+.ty-h3lv-export-text {
+  width: 100%; min-height: 250px; box-sizing: border-box; padding: 10px 12px;
+  border: 1px solid #566274; border-radius: 6px; resize: vertical;
+  background: #0f1319; color: #edf1f7;
+  font: 13px/1.6 Consolas, "Microsoft YaHei", monospace; white-space: pre;
+}
+.ty-h3lv-director {
+  margin-top: 14px; padding: 14px; border: 1px solid #4b6682; border-radius: 10px; background: #202832;
+}
+.ty-h3lv-director h3, .ty-h3lv-director-card h4 { margin: 0 0 8px; }
+.ty-h3lv-director-form { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
+.ty-h3lv-director-form label, .ty-h3lv-director-field { display: grid; gap: 6px; color: #cbd6e3; }
+.ty-h3lv-director-form select {
+  padding: 7px 10px; max-width: min(520px, 80vw); border: 1px solid #566274; border-radius: 6px;
+  background: #11151c; color: #edf1f7;
+}
+.ty-h3lv-director-field { margin: 10px 0; }
+.ty-h3lv-director-field-title { display: flex; align-items: center; gap: 8px; color: #cbd6e3; }
+.ty-h3lv-director-field textarea { min-height: 46px; margin: 0; }
+.ty-h3lv-director-card { margin-top: 14px; padding: 12px; border: 1px solid #4b6682; border-radius: 7px; }
+.ty-h3lv-director-original h4 { margin: 0 0 7px; color: #adcee9; }
+.ty-h3lv-director-original pre { white-space: pre-wrap; overflow-wrap: anywhere; color: #aeb9c8; font: inherit; }
+.ty-h3lv-director-lock { display: flex; align-items: center; gap: 8px; color: #d8e8f6; }
+.ty-h3lv-director input[type="checkbox"], .ty-h3lv-director-card input[type="checkbox"] { width: 18px; height: 18px; }
+.ty-h3lv-director [hidden] { display: none; }
+.ty-h3lv-button:focus-visible, .ty-h3lv-director select:focus-visible,
+.ty-h3lv-director textarea:focus-visible, .ty-h3lv-director-card textarea:focus-visible {
+  outline: 2px solid #61aef8; outline-offset: 2px;
+}
+.ty-h3lv-cut-menu {
+  position: fixed;
+  z-index: 100100;
+  padding: 5px;
+  border: 1px solid #607086;
+  border-radius: 6px;
+  background: #202833;
+}
+.ty-h3lv-cut-menu[hidden] { display: none; }
+.ty-h3lv-button[hidden] { display: none; }
+.ty-h3lv-cut-menu button { color: #edf2f8; background: transparent; border: 0; padding: 10px; cursor: pointer; }
+.ty-h3lv-cut-menu button:hover { background: #35465b; }
